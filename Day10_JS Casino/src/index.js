@@ -1,8 +1,10 @@
 const slider = document.querySelector(".slider");
 const selectNum = document.querySelector(".selectNum");
+const button = document.querySelector(".play");
+button.addEventListener("click", getInputValue);
 
 selectNum.innerHTML = slider.value;
-slider.oninput = function () {
+slider.oninput = function() {
   selectNum.innerHTML = this.value;
 };
 
@@ -10,23 +12,25 @@ function getInputValue() {
   var inputVal = document.querySelector(".myInput").value;
   var ranNum = Math.floor(getRandom(0, slider.value));
 
-  const result = document.querySelector(".result");
-  result.innerHTML = '';
-  
-  const newContent = document.createTextNode(
-    `You chose : ${inputVal}, the machine chose : ${ranNum}`
-  );
-  result.appendChild(newContent);
+  if (inputVal) {
+    const result = document.querySelector(".result");
+    result.innerHTML = "";
 
-  result.appendChild(document.createElement("br"));
+    const newContent = document.createTextNode(
+      `You chose : ${inputVal}, the machine chose : ${ranNum}`
+    );
+    result.appendChild(newContent);
 
-  var newResult;
-  if (inputVal == ranNum) {
-    newResult = document.createTextNode("You won!");
-  } else {
-    newResult = document.createTextNode("You lost!");
+    result.appendChild(document.createElement("br"));
+
+    var newResult;
+    if (parseInt(inputVal, 10) === ranNum) {
+      newResult = document.createTextNode("You won!");
+    } else {
+      newResult = document.createTextNode("You lost!");
+    }
+    result.appendChild(newResult);
   }
-  result.appendChild(newResult);
 }
 
 function getRandom(min, max) {
