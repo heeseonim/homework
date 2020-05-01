@@ -1,0 +1,46 @@
+.calculator {
+    background-color: #f9f9f9;
+    width: 335px;
+}
+
+.output {
+    font-size: 22px;
+    display: inline-block;
+    width: 239px;
+    text-align: right;
+    padding-right: 9px;
+    color: dimgray
+}
+
+.button {
+    border : none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 15px 32px;
+}
+
+#zero {
+    width: 160px;
+}
+
+.number {
+    background-color: #ffe0ac;
+}
+
+.command {
+    background-color: #ffacb7;
+}
+
+#reset {
+    background-color: #6886c5;
+    padding: 15px 29px;
+}
+
+#plus {
+    background-color: #ffacb7;
+    padding: 15px 30px;
+}
